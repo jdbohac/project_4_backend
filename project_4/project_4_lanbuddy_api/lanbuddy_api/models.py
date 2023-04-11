@@ -19,7 +19,7 @@ class Game(models.Model):
     release_date = models.CharField(max_length=32)
     img = models.TextField()
     game_genre = models.CharField(max_length=32)
-    users = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    users = models.ForeignKey(User, related_name = 'game_played', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.name
