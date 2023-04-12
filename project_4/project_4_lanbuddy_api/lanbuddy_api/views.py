@@ -4,11 +4,11 @@ from .serializers import GameSerializerBase,GameSerializer, UserSerializer
 from .models import Game, User
 # Create your views here.
 class GameList(generics.ListCreateAPIView):
-    queryset = Game.objects.all()
+    queryset = Game.objects.all().order_by('name')
     serializer_class = GameSerializer
     
 class GameDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Game.objects.all()
+    queryset = Game.objects.all().order_by('name')
     serializer_class = GameSerializer
     
 class UserList(generics.ListCreateAPIView):

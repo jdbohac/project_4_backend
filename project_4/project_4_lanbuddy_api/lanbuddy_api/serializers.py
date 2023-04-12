@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from drf_writable_nested import WritableNestedModelSerializer
 from .models import Game, User
 
 class GameSerializerBase(serializers.ModelSerializer):
@@ -16,7 +17,7 @@ class GameSerializer(GameSerializerBase):
     class Meta(GameSerializerBase.Meta):
         fields = GameSerializerBase.Meta.fields + ('players',)
         
-class UserSerializer(UserSerializerBase):
+class UserSerializer(WritableNestedModelSerializer, UserSerializerBase):
     game = GameSerializerBase()
     class Meta(UserSerializerBase.Meta):
         fields = UserSerializerBase.Meta.fields + ('game',)
