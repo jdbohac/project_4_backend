@@ -13,7 +13,7 @@ class UserSerializerBase(serializers.ModelSerializer):
         fields = ('id', 'user_name', 'tag', 'availability', 'time_zone', 'skill_level')
         
 class GameSerializer(GameSerializerBase):
-    players = UserSerializerBase(many=True)
+    players = UserSerializerBase(many=True, read_only=True, required=False)
     class Meta(GameSerializerBase.Meta):
         fields = GameSerializerBase.Meta.fields + ('players',)
         
