@@ -19,7 +19,7 @@ class User(models.Model):
     availability = models.CharField(max_length=32)
     time_zone = models.CharField(max_length=32)
     skill_level = models.CharField(max_length=32)
-    game = models.ForeignKey(Game, related_name='players', on_delete=models.CASCADE, null=True)
+    game = models.ForeignKey(Game, related_name='players', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.tag
