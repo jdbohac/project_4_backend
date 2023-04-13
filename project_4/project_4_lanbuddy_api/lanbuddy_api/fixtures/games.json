@@ -18,5 +18,15 @@
         "img": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/FIFA_23_Cover.jpg/220px-FIFA_23_Cover.jpg",
         "game_genre": "Sports"
     }
+},
+{
+    "model": "lanbuddy_api.game",
+    "pk": 3,
+    "fields": {
+        "name": "Battlefield 5",
+        "release_date": "9/4/2018",
+        "img": "https://upload.wikimedia.org/wikipedia/en/f/f0/Battlefield_V_standard_edition_box_art.jpg",
+        "game_genre": "FPS"
+    }
 }
 ]
