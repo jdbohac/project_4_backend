@@ -14,7 +14,7 @@ class Game(models.Model):
 
 
 class User(models.Model):
-    name = models.CharField(max_length=32)
+    user_name = models.CharField(max_length=32)
     tag = models.CharField(max_length=32)
     availability = models.CharField(max_length=32)
     time_zone = models.CharField(max_length=32)
