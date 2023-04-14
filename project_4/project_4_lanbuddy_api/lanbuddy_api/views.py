@@ -10,7 +10,8 @@ class GameList(generics.ListCreateAPIView):
     serializer_class = GameSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['game_genre']
-    
+    search_fields = ['name', 'game_genre']
+
 class GameDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Game.objects.all().order_by('name')
     serializer_class = GameSerializer
