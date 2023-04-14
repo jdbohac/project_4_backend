@@ -1,5 +1,5 @@
 from django.db import models
-
+import django_filters
 # Create your models here.
 
 
@@ -23,3 +23,10 @@ class User(models.Model):
 
     def __str__(self):
         return self.tag
+
+class GameFilter(django_filters.FilterSet):
+    name = django_filters.CharFilter(lookup_expr='iexact')
+
+    class Meta:
+        model = Game
+        fields = ["game_genre"]
